@@ -23,23 +23,16 @@ const Section = () => {
         <section className="section-1">
             <h2>Random Philosophy Quote</h2>
             <div className="section-1-a">
-                <div className="flex-1">
-                    <span className="img"><img src={Image1} alt="" /></span>
-                    <div className="header">René Descartes</div>
-                    <p>“I think therefore I am Cogito, ergo sum”
-                    </p>
-                </div>
+                {randomQuotes.map((quote) => (
+                    <div className="flex-1" key={quote.id}>
+                        <div className="img">
+                            <img src={quote.image} alt="Philosopher" />
+                        </div>
+                        <div className="header">{quote.name}</div>
+                        <p>{quote.quote}</p>
+                    </div>
+                ))}
             </div>
-
-            {randomQuotes.map((quote) => (
-                <div className="flex-1" key={quote.id}>
-                    <span className="img">{quote.image}</span>
-                    div.header
-
-                </div>
-            ))}
-                
-        }
         </section>
     );
 }
